@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333;
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+        }
+
+        #sidebar {
+            width: 300px;
+            border-right:2px solid yellow;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            color:white;
+        }
+
+        #sidebar a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+        text-align:center;
+    }
+    #sidebar a:hover{
+    background:yellow;
+    color:black;
+    }
+
+
+    </style>
+    <title>Home</title>
+</head>
+<body>
+
+    <div id="container">
+        <div id="sidebar">
+            <img src="{% static 'images/person.jpg' %}"  alt="..." style="height:120px; width:120px; border-radius:50%">
+            <h4 style="font-style: italic; font-size:20px; padding:10px;">ANJALI PRAKASH </h4>
+            <hr>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'exp' %}">Experience</a>
+            <a href="{% url 'skills' %}">Skills</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+        <div id="content">
+            <img src="{% static 'images/person.jpg' %}" class="img-thumbnail" alt="..." style="height:240px; width:255px;">
+            <h3 style="font-style: italic; padding:20px; text-align:left;">Hello..,</h3>
+            <p style="text-align:left; text-indent: 100px; padding-left:30px; font-size:15px;">Iam <span style="color:yellow;">Anjali Prakash</span> having 1 year of full-stack web development experience for softroniics.
+            I offer the technical expertise you are seeking for your web developer position. <br><br>
+            Since earning my bachelor's degrees in computer science from Calicut University. I have served as a web-developer At
+                Softroniics, one of the software company & web developing firm.
+            <br><br>As a dedicated and detail-oriented web developer with [X years] of experience, I bring a passion for coding, problem-solving,
+                and creating innovative solutions. My expertise lies in front-end and back-end development,
+                where I excel at turning ideas into fully functional websites. Proficient in HTML,
+                CSS, JavaScript, and a variety of modern frameworks, I am committed to staying up-to-date
+                with industry trends and emerging technologies.</p>
+            <button type="button" class="btn btn-outline-warning">HIRE me</button>
+            <button type="button" class="btn btn-outline-info"><a href="{% url 'contact' %}" style="text-decoration:none;color:skyblue;">Contact</a></button>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
